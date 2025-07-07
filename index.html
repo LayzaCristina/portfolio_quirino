@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Portfólio</title>
+  </head>
+  <body>
+    <nav class="navegacao">
+      <ul class="menu">
+        <li><a href="#sobre" class="menu-link">Sobre</a></li>
+        <li><a href="#formacao" class="menu-link">Formação</a></li>
+        <li><a href="#projetos" class="menu-link">Projetos</a></li>
+        <li><a href="#contatos" class="menu-link">Contato</a></li>
+      </ul>
+    </nav>
+
+    <main id="sobre" class="cabecalho">
+      <div>
+        <img
+          src="./img/layza.jpg"
+          alt="Foto de Layza Cristina Quirino"
+          class="foto-perfil"
+        />
+        <h1>Layza Cristina Quirino</h1>
+        <p class="cabecalho-sub-titulo">
+          Estudante de Análise e Desenvolvimento de Sistemas
+        </p>
+      </div>
+    </main>
+
+    <section class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Sou uma estudante de Análise e Desenvolvimento de Sistemas, que
+          atualmente está no início da carreira. Nesse site você encontrará
+          informações sobre mim, meus projetos e saberá como entrar em contato
+          comigo.
+        </p>
+      </div>
+    </section>
+
+    <section id="formacao" class="formacao">
+      <h2 class="formacao-titulo">Formação</h2>
+      <div class="formacao-caixa">
+        <div class="formacao-paragrafo">
+          <p><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas</p>
+          <p><strong>Instituição:</strong> UNINTER</p>
+          <p><strong>Status:</strong> Cursando</p>
+        </div>
+
+        <div class="formacao-paragrafo">
+          <p><strong>Idiomas:</strong></p>
+          <p>Português (nativo)</p>
+          <p>Inglês (básico)</p>
+          <p>Espanhol (básico)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+        <div class="projetos-card">
+          <img
+            src="./img/projeto1.png"
+            alt="Projeto1"
+            class="projetos-imagem"
+          />
+          <h3 class="info-projetos">Loja de Carros</h3>
+          <p class="paragrafo-projetos">
+            Loja virtual moderna com animações suaves e design responsivo.
+          </p>
+        </div>
+        <div class="projetos-card">
+          <img
+            src="./img/projeto2 (1).png"
+            alt="projeto2"
+            class="projetos-imagem"
+          />
+          <h3 class="info-projetos">Pontos turistico de cada pais</h3>
+          <p class="paragrafo-projetos">
+            Neste site você conhecera os pontos turistico de cada pais
+          </p>
+        </div>
+        <div class="projetos-card">
+          <img
+            src="./img/projeto3.png"
+            alt="projeto3"
+            class="projetos-imagem"
+          />
+          <h3 class="info-projetos">Página de Viagens</h3>
+          <p class="paragrafo-projetos">
+            Uma página interativo com roteiros de viagem mais cobicados do
+            mundo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Contato</h2>
+      <form
+        class="formulario-contato"
+        id="formulario"
+        onsubmit="enviarwhats(event)"
+      >
+        <div class="grupo-form">
+          <input placeholder="Nome" class="campo-form" id="Nome" />
+        </div>
+        <div class="grupo-form">
+          <textarea
+            class="text-form"
+            placeholder="Digite sua mensagem"
+            id="mensagem"
+          ></textarea>
+        </div>
+        <button type="submit" class="botao-form">Enviar Whatsapp</button>
+      </form>
+    </section>
+    <script>
+      function enviarwhats(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("Nome").value;
+        const mensagem = document.getElementById("mensagem").value;
+        const telefone = "5521994561862";
+
+        const texto = `Olá Me chamo ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>

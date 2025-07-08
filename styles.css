@@ -143,20 +143,20 @@ body {
 }
 
 .projetos-caixa {
-  display: grid;
-  grid-template-columns: repeat (auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .projetos-card {
   background-color: var(--maisescuro);
   padding: 1rem;
-  max-width: 700px;
+  width: 100%;
   border-radius: 16px;
   box-shadow: 0 0 10px rgba(124, 58, 237, 0.2);
-  margin-top: 1rem;
   text-align: center;
 }
 
